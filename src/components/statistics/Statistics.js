@@ -3,15 +3,15 @@ import PropTypes from 'prop-types';
 import styles from './Statistics.module.css';
 
 
-const Statictics = ({title, stats}) => (
+const Statistics = ({title, stats}) => (
     <section className={styles.statistics}>
         {title && <h2 >{title}</h2>}
 
     <ul className={styles.statList}>
 {stats.map((stat) => (
     <li key={stat.id} style={{backgroundColor: randomHsl()}} className={styles.item}>
-        <span>{stat.label}</span>
-        <span>{stat.percentage}%</span>
+      <span>{stat.label}</span>
+      <span>{stat.percentage}%</span>
     </li>
 ))}
   </ul>
@@ -24,11 +24,11 @@ function randomHsl() {
 }
 
 
-Statictics.defaultProps = {
+Statistics.defaultProps = {
   title: ""
 };
 
-Statictics.propTypes = {
+Statistics.propTypes = {
     title: PropTypes.string,
     stats: PropTypes.arrayOf(
     PropTypes.shape({
@@ -42,4 +42,4 @@ Statictics.propTypes = {
 
 
 
-export default Statictics
+export default Statistics
